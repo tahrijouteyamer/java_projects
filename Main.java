@@ -1,28 +1,30 @@
-class Car {
-    String brand;
-    String color;
-    int year;
-  
-  public void drive() {
-    System.out.println(brand + " is driving");
-    }
+// Polymorphism / Inheritance (Method Overriding)
+class Animal {
+  void sound() {
+      System.out.println("Some generic animal sound");
+  }
+}
+
+class Dog extends Animal {
+  @Override
+  void sound() {
+      System.out.println("Bark!");
+  }
+}
+
+class Cat extends Animal {
+  @Override
+  void sound() {
+      System.out.println("Meow!");
+  }
+}
+
+public class Main {
+  public static void main(String[] args) {
+      Animal myDog = new Dog();
+      Animal myCat = new Cat();
     
-  public void stop() {
-    System.out.println(brand + " is stopping");
-    }
+      myDog.sound();
+      myCat.sound();
   }
-  
-  public class Main {
-    public static void main (String[] args) {
-      Car myCar = new Car();
-      myCar.brand = "Volkswagen";
-      myCar.color = "Black";
-      myCar.year = 2022;
-      System.out.println("Brand:" + myCar.brand);
-      System.out.println("Color: " + myCar.color);
-      System.out.println("Year: " + myCar.year);
-      
-      myCar.drive();
-      myCar.stop();
-    }
-  }
+}
